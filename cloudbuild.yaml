@@ -1,0 +1,12 @@
+steps:
+  - name: hashicorp/terraform:1.9
+    id: terraform-apply
+    entrypoint: sh
+    args:
+      - -c
+      - |
+        echo "=== Terraform init ==="
+        terraform init
+
+        echo "=== Terraform apply ==="
+        terraform apply -auto-approve
